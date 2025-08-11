@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>投資教育（審査配慮・モバイル向け）｜investax</title>
+  <meta name="description" content="広告審査を考慮した投資教育用のモバイル向けページ。誇大表現なし・中立な一般情報・明確な免責。トラッキング不使用。">
+  <!-- 暖機運用中：検索エンジン収録は不要。必要になったら index,follow に変更してください。 -->
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="referrer" content="no-referrer">
+  <meta name="format-detection" content="telephone=no, email=no, address=no">
+  <meta name="theme-color" content="#0b1220">
+  <!-- 厳格な CSP（外部取得を遮断、画像は data/self のみ、インライン CSS/JS 許可） -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'unsafe-inline'; script-src 'unsafe-inline'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'">
+  <style>
+    :root{--bg:#0b1220;--bg2:#0b1425;--card:#101a2c;--border:#1e2a42;--muted:#8ca0bf;--text:#e8eefc;--accent:#4aa4ff;--line:#06c755}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:linear-gradient(180deg,var(--bg),var(--bg2));color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans JP",system-ui,sans-serif}
+    a{color:inherit;text-decoration:none}
+    img,svg{max-width:100%;height:auto;display:block}
+    .wrap{max-width:560px;margin:0 auto;padding:16px 14px 96px}
+    .top{display:flex;align-items:center;justify-content:center;padding:10px 0}
+    .brand{font-weight:800;letter-spacing:.2px;font-size:18px}
+    .card{background:linear-gradient(180deg,#101a2c,#0e1727);border:1px solid var(--border);border-radius:14px;padding:14px;box-shadow:0 10px 26px rgba(6,12,24,.35)}
+    .hero{padding:16px 14px}
+    .badge{display:inline-block;padding:6px 10px;border-radius:999px;font-size:12px;background:rgba(122,190,255,.12);border:1px solid rgba(122,190,255,.35);color:#bfe0ff}
+    h1{font-size:22px;margin:10px 0 6px}
+    .muted{color:var(--muted);line-height:1.7}
+    .illus{margin-top:10px;border-radius:12px;overflow:hidden;border:1px solid #233351}
+    .list{display:grid;grid-template-columns:1fr;gap:10px}
+    .item{display:grid;grid-template-columns:40px 1fr;gap:10px;align-items:start;background:#0d172a;border:1px solid #22304b;border-radius:12px;padding:12px}
+    .icon{width:28px;height:28px}
+    .item strong{display:block;margin-bottom:4px}
+    .section{margin-top:14px}
+    .disclaimer{font-size:12px;color:#93a1b7;line-height:1.8;margin-top:12px}
+    .foot{margin:18px 0 10px;text-align:center;color:#8a97ad;font-size:12px}
+    .diagram{background:#0d172a;border:1px solid #22304b;border-radius:12px;padding:12px;margin-top:12px}
+
+    /* フローティング LINE（モバイル前提：PC でも同レイアウト表示） */
+    .float-line{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:12px 14px;background:var(--line);color:#fff;font-weight:800;border-radius:14px;box-shadow:0 10px 30px rgba(6,12,24,.4);z-index:9999}
+    .float-line:active{transform:translateY(1px)}
+    .float-line .label{font-size:16px}
+    .float-line .note{font-size:12px;opacity:.95;font-weight:600}
+
+    /* 公的・公式リンク：常に1カラム（モバイル専用設計） */
+    .link-grid{display:grid;grid-template-columns:1fr;gap:10px}
+    .link-btn{display:flex;align-items:center;justify-content:space-between;padding:12px;background:#0d172a;border:1px solid #22304b;border-radius:12px;color:#e8eefc;font-weight:700}
+    .link-btn svg{width:18px;height:18px;opacity:.9}
+  </style>
+</head>
+<body>
+  <header class="top">
+    <div class="brand">investax｜投資教育（審査配慮・一般情報）</div>
+  </header>
+
+  <main class="wrap">
+    <section class="card hero">
+      <span class="badge">教育目的｜誇大表現なし</span>
+      <h1>はじめての株式投資の基礎</h1>
+      <p class="muted">このページは、一般的な投資教育を目的として作成された中立的な情報のまとめです。特定銘柄の推奨・収益保証・投資助言は行いません。意思決定に役立つ考え方や注意点を簡潔に学べます。</p>
+      <figure class="illus">
+        <svg viewBox="0 0 800 420" role="img" aria-label="抽象的な教育用イメージ">
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#122248"/>
+              <stop offset="100%" stop-color="#0a1630"/>
+            </linearGradient>
+            <linearGradient id="g2" x1="0" y1="1" x2="1" y2="0">
+              <stop offset="0%" stop-color="rgba(74,164,255,0.35)"/>
+              <stop offset="100%" stop-color="rgba(124,240,197,0.0)"/>
+            </linearGradient>
+          </defs>
+          <rect x="0" y="0" width="800" height="420" fill="url(#g1)"/>
+          <circle cx="120" cy="80" r="60" fill="url(#g2)"/>
+          <circle cx="700" cy="360" r="80" fill="rgba(124,240,197,0.15)"/>
+          <g stroke="#2a3e66" stroke-width="2" fill="none" opacity="0.6">
+            <path d="M20 320 Q 120 260 220 300 T 420 290 T 620 260 T 780 240"/>
+            <path d="M20 350 Q 140 300 240 330 T 440 320 T 640 300 T 780 290" opacity="0.5"/>
+          </g>
+          <g opacity="0.9">
+            <polyline points="60,340 140,290 210,310 300,270 380,300 460,260 560,280 640,250 720,270" fill="none" stroke="#85c6ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+          <title>抽象的な教育用イメージ（装飾）</title>
+        </svg>
+      </figure>
+    </section>
+
+    <section class="card section">
+      <h2 style="margin:0 0 8px;font-size:18px">学べる内容（一般情報）</h2>
+      <div class="list">
+        <div class="item">
+          <svg class="icon" viewBox="0 0 24 24" role="img" aria-label="本のアイコン"><path d="M4 5a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2V5z" fill="#1e3358"/><path d="M18 3v16c-3-2-7-2-10 0V3c3 0 7 0 10 0z" fill="#4aa4ff" opacity="0.35"/></svg>
+          <div>
+            <strong>1. 市場の仕組み</strong>
+            <p class="muted">株式市場の基本、注文の種類（成行/指値）、売買に伴う手数料や税金の概要。</p>
+          </div>
+        </div>
+        <div class="item">
+          <svg class="icon" viewBox="0 0 24 24" role="img" aria-label="盾のアイコン"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5l8-3z" fill="#1e3358"/><path d="M12 6v12c2.8-1.6 5-4.1 5-7.3V6l-5-2z" fill="#7cf0c5" opacity="0.35"/></svg>
+          <div>
+            <strong>2. リスクの種類</strong>
+            <p class="muted">価格変動・流動性・信用・イベント・通貨などの一般的リスク。分散と長期視点の重要性。</p>
+          </div>
+        </div>
+        <div class="item">
+          <svg class="icon" viewBox="0 0 24 24" role="img" aria-label="情報のアイコン"><circle cx="12" cy="12" r="10" fill="#1e3358"/><circle cx="12" cy="7" r="1.5" fill="#bfe0ff"/><rect x="11" y="10" width="2" height="7" rx="1" fill="#4aa4ff"/></svg>
+          <div>
+            <strong>3. 情報の見方</strong>
+            <p class="muted">一次情報の確認、開示資料・指標の基本。誇大広告や誤情報に注意する姿勢。</p>
+          </div>
+        </div>
+        <div class="item">
+          <svg class="icon" viewBox="0 0 24 24" role="img" aria-label="注意のアイコン"><path d="M12 3l10 18H2L12 3z" fill="#1e3358"/><rect x="11" y="9" width="2" height="6" rx="1" fill="#ffd36e"/><circle cx="12" cy="17" r="1.2" fill="#ffd36e"/></svg>
+          <div>
+            <strong>4. よくある誤解</strong>
+            <p class="muted">「必ず勝てる」「誰かの真似で増える」といった主張を鵜呑みにしないこと。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card section">
+      <h2 style="margin:0 0 8px;font-size:18px">リスクと費用の一般情報</h2>
+      <p class="muted">投資には元本割れの可能性があり、価格は常に変動します。取引には各種手数料や税金が発生します。商品・サービスの利用に際しては、契約条件・手数料・リスク説明等を必ずご確認ください。</p>
+      <div class="diagram" aria-label="分散のイメージ図">
+        <svg viewBox="0 0 800 220" role="img" aria-label="分散投資の抽象イメージ">
+          <rect width="800" height="220" fill="#0e1a2b"/>
+          <g opacity="0.9">
+            <circle cx="120" cy="120" r="28" fill="#4aa4ff"/>
+            <circle cx="220" cy="80" r="22" fill="#7cf0c5"/>
+            <circle cx="300" cy="150" r="26" fill="#bfe0ff"/>
+            <circle cx="410" cy="95" r="20" fill="#4aa4ff"/>
+            <circle cx="520" cy="130" r="24" fill="#7cf0c5"/>
+            <circle cx="620" cy="70" r="18" fill="#bfe0ff"/>
+            <circle cx="720" cy="150" r="22" fill="#4aa4ff"/>
+          </g>
+          <g stroke="#22304b" stroke-width="2" opacity="0.6">
+            <line x1="60" y1="180" x2="760" y2="180"/>
+            <line x1="60" y1="40" x2="60" y2="180"/>
+          </g>
+          <title>分散を示す抽象図（装飾）</title>
+        </svg>
+      </div>
+    </section>
+
+    <!-- 公的・公式情報（情報提供のみ。推奨・勧誘ではありません） -->
+    <section class="card section" aria-labelledby="official-links">
+      <h2 id="official-links" style="margin:0 0 8px;font-size:18px">公的・公式情報へのリンク</h2>
+      <div class="link-grid">
+        <a class="link-btn" href="https://www.jpx.co.jp/" target="_blank" rel="noopener nofollow external" aria-label="日本取引所グループ JPX 公式サイト">
+          <span>日本取引所グループ（JPX）</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5l8 7-8 7" fill="none" stroke="#8fb4ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="link-btn" href="https://disclosure.edinet-fsa.go.jp/" target="_blank" rel="noopener nofollow external" aria-label="EDINET 金融庁 開示情報">
+          <span>EDINET（金融庁・開示）</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5l8 7-8 7" fill="none" stroke="#8fb4ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="link-btn" href="https://www.jpx.co.jp/listing/disclosure/index.html" target="_blank" rel="noopener nofollow external" aria-label="適時開示 JPX">
+          <span>適時開示（JPX）</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5l8 7-8 7" fill="none" stroke="#8fb4ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="link-btn" href="https://www3.nhk.or.jp/news/business/" target="_blank" rel="noopener nofollow external" aria-label="NHK 経済ニュース">
+          <span>NHK 経済ニュース</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5l8 7-8 7" fill="none" stroke="#8fb4ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="link-btn" href="https://jp.reuters.com/markets" target="_blank" rel="noopener nofollow external" aria-label="ロイター日本 マーケット">
+          <span>ロイター日本（マーケット）</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5l8 7-8 7" fill="none" stroke="#8fb4ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <p class="muted" style="margin-top:8px">外部リンクは情報提供のみで、推奨・勧誘・提携の示唆ではありません。各サイトの方針・利用規約をご確認ください。</p>
+    </section>
+
+    <section class="card section">
+      <h2 style="margin:0 0 8px;font-size:18px">運営者情報</h2>
+      <p class="muted">運営：investax（情報提供・教育目的）／ 連絡：ページ下部の LINE よりお問い合わせください。</p>
+    </section>
+
+    <section class="disclaimer">
+      【重要】本ページは教育・一般情報の提供を目的としたものであり、特定銘柄の推奨や投資助言ではありません。投資判断はご自身の責任で行ってください。<br>
+      【広告・審査】表現は各プラットフォームの審査基準を考慮して作成していますが、可否は最終的に各プラットフォームの判断に依存します。<br>
+      【プライバシー】本ページではクッキーやトラッキングを使用しません。
+    </section>
+
+    <div class="foot">© <span id="y"></span> investax ｜ 利用規約・プライバシーポリシーは公開後にご案内します。</div>
+  </main>
+
+  <!-- フローティング：LINE 追加（唯一の外部リンク） -->
+  <a class="float-line" href="https://works.do/5wDVajL" aria-label="LINEで追加・お問い合わせ（無料）" rel="noopener nofollow">
+    <span class="label">LINE 追加（無料）</span>
+    <span class="note">追加後、無料の学習資料をご案内する場合があります</span>
+  </a>
+
+  <script>
+    (function(){var y=document.getElementById('y');if(y){y.textContent=new Date().getFullYear();}})();
+  </script>
+</body>
+</html>
