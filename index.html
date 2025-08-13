@@ -10,32 +10,31 @@
   <meta name="referrer" content="no-referrer">
   <meta name="format-detection" content="telephone=no, email=no, address=no">
   <meta name="theme-color" content="#0b1220">
-
-  <!-- 厳格な CSP（外部取得は最小限：gtag 用のドメインのみ許可） -->
-  <!-- 注意：'XXXXXXXXXXX' を実ラベルに置き換えるとき、ドメイン追加は不要です -->
+  <!-- 厳格な CSP（gtag 必要ドメインのみ許可） -->
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data: https://www.googletagmanager.com https://www.google-analytics.com https://www.googleadservices.com https://stats.g.doubleclick.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://www.googletagmanager.com; connect-src https://www.googletagmanager.com https://www.google-analytics.com https://www.googleadservices.com https://www.google.com https://stats.g.doubleclick.net; base-uri 'self'; form-action 'none'; frame-ancestors 'none'">
 
-  <!-- Google tag (gtag.js) - Google Ads -->
+  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17469241826"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){ dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'AW-17469241826');
+  </script>
 
-    // 点击 LINE 按钮时上报转化
-    // 将 'XXXXXXXXXXX' 替换为 Google Ads 转化操作的 Label（例：AW-XXXX/YYYYYYYYY）
-    function reportLineClick(event){
-      try{
-        gtag('event', 'conversion', {
-          'send_to': 'AW-17469241826/XXXXXXXXXXX',
-          // 保障尽量发送：若浏览器支持，会在导航时也尝试发送
-          'transport_type': 'beacon',
-          'event_callback': function(){ /* 可选：需要时在此回调做额外处理 */ }
-        });
-      }catch(e){}
-      // 不阻止跳转
-      return true;
+  <!-- 点击转化函数（点击 LINE 按钮时触发并跳转） -->
+  <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof url !== 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+        'send_to': 'AW-17469241826/1oQbCM6h8oUbEOLz_YlB',
+        'event_callback': callback
+      });
+      return false; // 阻止默认跳转，等待回调中跳转
     }
   </script>
 
@@ -62,13 +61,11 @@
     .disclaimer{font-size:12px;color:#93a1b7;line-height:1.8;margin-top:12px}
     .foot{margin:18px 0 10px;text-align:center;color:#8a97ad;font-size:12px}
     .diagram{background:#0d172a;border:1px solid #22304b;border-radius:12px;padding:12px;margin-top:12px}
-
     /* フローティング LINE（モバイル前提：PC でも同レイアウト表示） */
     .float-line{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:12px 14px;background:var(--line);color:#fff;font-weight:800;border-radius:14px;box-shadow:0 10px 30px rgba(6,12,24,.4);z-index:9999}
     .float-line:active{transform:translateY(1px)}
     .float-line .label{font-size:16px}
     .float-line .note{font-size:12px;opacity:.95;font-weight:600}
-
     /* 公的・公式リンク：常に1カラム（モバイル専用設計） */
     .link-grid{display:grid;grid-template-columns:1fr;gap:10px}
     .link-btn{display:flex;align-items:center;justify-content:space-between;padding:12px;background:#0d172a;border:1px solid #22304b;border-radius:12px;color:#e8eefc;font-weight:700}
@@ -217,13 +214,16 @@
      href="https://works.do/5wDVajL"
      aria-label="LINEで追加・お問い合わせ（無料）"
      rel="noopener nofollow"
-     onclick="return reportLineClick(event);">
+     onclick="return gtag_report_conversion('https://works.do/5wDVajL');">
     <span class="label">LINE 追加（無料）</span>
     <span class="note">追加後、無料の学習資料をご案内する場合があります</span>
   </a>
 
   <script>
-    (function(){var y=document.getElementById('y');if(y){y.textContent=new Date().getFullYear();}})();
+    (function(){
+      var y=document.getElementById('y');
+      if(y){ y.textContent=new Date().getFullYear(); }
+    })();
   </script>
 </body>
 </html>
