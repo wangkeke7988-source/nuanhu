@@ -4,14 +4,41 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>投資教育（審査配慮・モバイル向け）｜investax</title>
-  <meta name="description" content="広告審査を考慮した投資教育用のモバイル向けページ。誇大表現なし・中立な一般情報・明確な免責。トラッキング不使用。">
+  <meta name="description" content="広告審査を考慮した投資教育用のモバイル向けページ。誇大表現なし・中立な一般情報・明確な免責。必要最小限の計測のみ使用。">
   <!-- 暖機運用中：検索エンジン収録は不要。必要になったら index,follow に変更してください。 -->
   <meta name="robots" content="noindex,nofollow">
   <meta name="referrer" content="no-referrer">
   <meta name="format-detection" content="telephone=no, email=no, address=no">
   <meta name="theme-color" content="#0b1220">
-  <!-- 厳格な CSP（外部取得を遮断、画像は data/self のみ、インライン CSS/JS 許可） -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'unsafe-inline'; script-src 'unsafe-inline'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'">
+
+  <!-- 厳格な CSP（外部取得は最小限：gtag 用のドメインのみ許可） -->
+  <!-- 注意：'XXXXXXXXXXX' を実ラベルに置き換えるとき、ドメイン追加は不要です -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data: https://www.googletagmanager.com https://www.google-analytics.com https://www.googleadservices.com https://stats.g.doubleclick.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://www.googletagmanager.com; connect-src https://www.googletagmanager.com https://www.google-analytics.com https://www.googleadservices.com https://www.google.com https://stats.g.doubleclick.net; base-uri 'self'; form-action 'none'; frame-ancestors 'none'">
+
+  <!-- Google tag (gtag.js) - Google Ads -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17469241826"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'AW-17469241826');
+
+    // 点击 LINE 按钮时上报转化
+    // 将 'XXXXXXXXXXX' 替换为 Google Ads 转化操作的 Label（例：AW-XXXX/YYYYYYYYY）
+    function reportLineClick(event){
+      try{
+        gtag('event', 'conversion', {
+          'send_to': 'AW-17469241826/XXXXXXXXXXX',
+          // 保障尽量发送：若浏览器支持，会在导航时也尝试发送
+          'transport_type': 'beacon',
+          'event_callback': function(){ /* 可选：需要时在此回调做额外处理 */ }
+        });
+      }catch(e){}
+      // 不阻止跳转
+      return true;
+    }
+  </script>
+
   <style>
     :root{--bg:#0b1220;--bg2:#0b1425;--card:#101a2c;--border:#1e2a42;--muted:#8ca0bf;--text:#e8eefc;--accent:#4aa4ff;--line:#06c755}
     *{box-sizing:border-box}
@@ -179,14 +206,18 @@
     <section class="disclaimer">
       【重要】本ページは教育・一般情報の提供を目的としたものであり、特定銘柄の推奨や投資助言ではありません。投資判断はご自身の責任で行ってください。<br>
       【広告・審査】表現は各プラットフォームの審査基準を考慮して作成していますが、可否は最終的に各プラットフォームの判断に依存します。<br>
-      【プライバシー】本ページではクッキーやトラッキングを使用しません。
+      【プライバシー】広告効果測定のために Google タグ（Google Ads）を使用します。Cookie の利用やデータの取扱いは Google のポリシーに従います。
     </section>
 
     <div class="foot">© <span id="y"></span> investax ｜ 利用規約・プライバシーポリシーは公開後にご案内します。</div>
   </main>
 
   <!-- フローティング：LINE 追加（唯一の外部リンク） -->
-  <a class="float-line" href="https://works.do/5wDVajL" aria-label="LINEで追加・お問い合わせ（無料）" rel="noopener nofollow">
+  <a class="float-line"
+     href="https://works.do/5wDVajL"
+     aria-label="LINEで追加・お問い合わせ（無料）"
+     rel="noopener nofollow"
+     onclick="return reportLineClick(event);">
     <span class="label">LINE 追加（無料）</span>
     <span class="note">追加後、無料の学習資料をご案内する場合があります</span>
   </a>
